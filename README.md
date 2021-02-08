@@ -2,4 +2,4 @@
 installs brew , minikube and docker on ur goinfre.
 
 # config
-After main instalation (sh main.sh) run symlinks (sh sym.sh).
+sh main.sh

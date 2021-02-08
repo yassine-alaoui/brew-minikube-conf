@@ -37,7 +37,8 @@ then
 cat >> $HOME/.zshrc <<EOL
 # Load Homebrew config script
 source \$HOME/.brewconfig.zsh
-export MINIKUBE_HOME="/Users/yaalaoui/goinfre/.minikube"
+export MINIKUBE_HOME="$HOME/goinfre/.minikube"
+export KUBECONFIG="$KUBECONFIG:$HOME/goinfre/.kube/config"
 EOL
 fi
 
@@ -49,11 +50,13 @@ brew update
 source $HOME/.zshrc
 
 # Install minikube
-if ! ls -la $HOME | grep -ce .minikube; then echo "\033[1;4;31mminikube already installed"; else brew install minikube;
+if ls -la $HOME | grep -ce .minikube; then echo "\033[1;4;31mminikube already installed"; else brew install minikube;fi
 
 # Install docker
-if ! ls -la $HOME | grep -ce .docker; then echo "\033[1;4;31mdocker already installed"; else brew install docker;
+if ls -la $HOME | grep -ce .docker; then echo "\033[1;4;31mdocker already installed"; else brew install docker;fi
 
 # After
 
-echo "\033[1;32mdocker and kube directories are not sat yet make sure u use symlink after the first run"
+minikube start
+
+source $HOME/.brewconfig.zsh
