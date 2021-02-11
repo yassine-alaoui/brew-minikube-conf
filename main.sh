@@ -36,10 +36,10 @@ if ! grep -q "# Load Homebrew config script" $HOME/.zshrc
 then
 cat >> $HOME/.zshrc <<EOL
 # Load Homebrew config script
-source \$HOME/.brewconfig.zsh
 export MINIKUBE_HOME="$HOME/goinfre/.minikube"
 export KUBECONFIG="$KUBECONFIG:$HOME/goinfre/.kube/config"
 export MACHINE_STORAGE_PATH="$HOME/goinfre/.docker"
+source \$HOME/.brewconfig.zsh
 EOL
 fi
 
