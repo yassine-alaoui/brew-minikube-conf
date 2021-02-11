@@ -39,6 +39,7 @@ cat >> $HOME/.zshrc <<EOL
 source \$HOME/.brewconfig.zsh
 export MINIKUBE_HOME="$HOME/goinfre/.minikube"
 export KUBECONFIG="$KUBECONFIG:$HOME/goinfre/.kube/config"
+export MACHINE_STORAGE_PATH="$HOME/goinfre/.docker"
 EOL
 fi
 
